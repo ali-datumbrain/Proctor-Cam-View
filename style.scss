@@ -575,7 +575,6 @@ body {
 
 .screen-block {
   margin: 0.5rem;
-  background: rgba(68, 61, 52, 0.5);
   border-radius: var(--radius-md);
   flex-basis: 88%;
   position: relative;
@@ -588,7 +587,7 @@ body {
   flex-basis: 12%;
 }
 .test-taker {
-  &:hover {
+  > div:hover {
     .screen-name {
       display: inline-block;
     }
@@ -646,31 +645,24 @@ body {
   }
   &.triple {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto auto;
     align-items: center;
     gap: 1.5rem;
     > div {
       flex-basis: 50%;
+      &:nth-child(1) {
+        grid-column: 1 / span 2;
+        align-self: flex-end;
+      }
+      &:nth-child(2) {
+        grid-column: 3 / span 2;
+        align-self: flex-end;
+      }
+      &:nth-child(3) {
+        grid-column: 2 / span 2;
+        align-self: flex-start;
+      }
     }
-    .screen,
-    .cam {
-      border-radius: var(--radius-sm);
-      margin-inline: auto;
-    }
-    .screen {
-      width: 100%;
-      background-color: orange;
-    }
-    .cam {
-      width: 50%;
-      background-color: blue;
-    }
-  }
-  &.quadruple {
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    gap: 1.5rem;
     .screen,
     .cam {
       border-radius: var(--radius-sm);
@@ -685,6 +677,36 @@ body {
       background-color: blue;
     }
   }
+  &.quadruple {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 1.5rem;
+    > div {
+      &:nth-child(1),
+      &:nth-child(2) {
+        align-self: flex-end;
+      }
+      &:nth-child(3),
+      &:nth-child(4) {
+        align-self: flex-start;
+      }
+    }
+    .screen,
+    .cam {
+      border-radius: var(--radius-sm);
+      margin-inline: auto;
+    }
+    .screen {
+      width: 80%;
+      background-color: orange;
+    }
+    .cam {
+      width: 42%;
+      background-color: blue;
+    }
+  }
+  &.double,
   &.triple,
   &.quadruple {
     .screen-name {
@@ -708,6 +730,46 @@ body {
     grid-template-columns: auto auto auto;
     align-items: center;
     gap: 1.5rem;
+  }
+  &.quintuple {
+    grid-template-columns: auto auto auto auto auto auto;
+    > div {
+      flex-basis: 50%;
+      &:nth-child(1) {
+        grid-column: 1 / span 2;
+        align-self: flex-end;
+      }
+      &:nth-child(2) {
+        grid-column: 3 / span 2;
+        align-self: flex-end;
+      }
+      &:nth-child(3) {
+        grid-column: 5 / span 2;
+        align-self: flex-end;
+      }
+      &:nth-child(4) {
+        grid-column: 2 / span 2;
+        align-self: flex-start;
+      }
+      &:nth-child(5) {
+        grid-column: 4 / span 2;
+        align-self: flex-start;
+      }
+    }
+  }
+  &.sextuple {
+    > div {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        align-self: flex-end;
+      }
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        align-self: flex-start;
+      }
+    }
   }
   &.quintuple,
   &.sextuple {

@@ -593,7 +593,6 @@ body {
 
 .screen-block {
   margin: 0.5rem;
-  background: rgba(68, 61, 52, 0.5);
   border-radius: var(--radius-md);
   flex-basis: 88%;
   position: relative;
@@ -611,13 +610,13 @@ body {
 .test-taker {
   min-height: 98vh;
 }
-.test-taker:hover .screen-name {
+.test-taker > div:hover .screen-name {
   display: inline-block;
 }
-.test-taker:hover .screen-actions {
+.test-taker > div:hover .screen-actions {
   display: flex;
 }
-.test-taker:hover .action-btn {
+.test-taker > div:hover .action-btn {
   display: inline-block;
 }
 .test-taker > div {
@@ -664,12 +663,24 @@ body {
 }
 .test-taker.triple {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto auto;
   align-items: center;
   gap: 1.5rem;
 }
 .test-taker.triple > div {
   flex-basis: 50%;
+}
+.test-taker.triple > div:nth-child(1) {
+  grid-column: 1/span 2;
+  align-self: flex-end;
+}
+.test-taker.triple > div:nth-child(2) {
+  grid-column: 3/span 2;
+  align-self: flex-end;
+}
+.test-taker.triple > div:nth-child(3) {
+  grid-column: 2/span 2;
+  align-self: flex-start;
 }
 .test-taker.triple .screen,
 .test-taker.triple .cam {
@@ -677,11 +688,11 @@ body {
   margin-inline: auto;
 }
 .test-taker.triple .screen {
-  width: 100%;
+  width: 80%;
   background-color: orange;
 }
 .test-taker.triple .cam {
-  width: 50%;
+  width: 42%;
   background-color: blue;
 }
 .test-taker.quadruple {
@@ -689,6 +700,12 @@ body {
   grid-template-columns: auto auto;
   align-items: center;
   gap: 1.5rem;
+}
+.test-taker.quadruple > div:nth-child(1), .test-taker.quadruple > div:nth-child(2) {
+  align-self: flex-end;
+}
+.test-taker.quadruple > div:nth-child(3), .test-taker.quadruple > div:nth-child(4) {
+  align-self: flex-start;
 }
 .test-taker.quadruple .screen,
 .test-taker.quadruple .cam {
@@ -703,18 +720,18 @@ body {
   width: 42%;
   background-color: blue;
 }
-.test-taker.triple .screen-name, .test-taker.quadruple .screen-name {
+.test-taker.double .screen-name, .test-taker.triple .screen-name, .test-taker.quadruple .screen-name {
   bottom: 1.2rem;
   left: 1.2rem;
   font-size: 1rem;
 }
-.test-taker.triple .screen-actions, .test-taker.quadruple .screen-actions {
+.test-taker.double .screen-actions, .test-taker.triple .screen-actions, .test-taker.quadruple .screen-actions {
   gap: 12px;
   bottom: 1.2rem;
   right: 1.2rem;
   padding: 9px 12px;
 }
-.test-taker.triple .action-btn, .test-taker.quadruple .action-btn {
+.test-taker.double .action-btn, .test-taker.triple .action-btn, .test-taker.quadruple .action-btn {
   width: 14px;
 }
 .test-taker.quintuple, .test-taker.sextuple {
@@ -722,6 +739,38 @@ body {
   grid-template-columns: auto auto auto;
   align-items: center;
   gap: 1.5rem;
+}
+.test-taker.quintuple {
+  grid-template-columns: auto auto auto auto auto auto;
+}
+.test-taker.quintuple > div {
+  flex-basis: 50%;
+}
+.test-taker.quintuple > div:nth-child(1) {
+  grid-column: 1/span 2;
+  align-self: flex-end;
+}
+.test-taker.quintuple > div:nth-child(2) {
+  grid-column: 3/span 2;
+  align-self: flex-end;
+}
+.test-taker.quintuple > div:nth-child(3) {
+  grid-column: 5/span 2;
+  align-self: flex-end;
+}
+.test-taker.quintuple > div:nth-child(4) {
+  grid-column: 2/span 2;
+  align-self: flex-start;
+}
+.test-taker.quintuple > div:nth-child(5) {
+  grid-column: 4/span 2;
+  align-self: flex-start;
+}
+.test-taker.sextuple > div:nth-child(1), .test-taker.sextuple > div:nth-child(2), .test-taker.sextuple > div:nth-child(3) {
+  align-self: flex-end;
+}
+.test-taker.sextuple > div:nth-child(4), .test-taker.sextuple > div:nth-child(5), .test-taker.sextuple > div:nth-child(6) {
+  align-self: flex-start;
 }
 .test-taker.quintuple .screen,
 .test-taker.quintuple .cam, .test-taker.sextuple .screen,
