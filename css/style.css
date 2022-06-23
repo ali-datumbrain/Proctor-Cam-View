@@ -921,6 +921,8 @@ body {
 
 .sidebar-checkbox {
   margin-top: 1.25rem;
+  position: absolute;
+  bottom: 1.75rem;
 }
 
 .container {
@@ -942,6 +944,9 @@ body {
   cursor: pointer;
   height: 0;
   width: 0;
+}
+.container input:disabled {
+  background-color: var(--bg-light-primary);
 }
 
 .checkmark {
@@ -970,6 +975,13 @@ body {
 
 .container input:checked ~ .checkmark:after {
   display: block;
+}
+
+.container input:disabled ~ .checkmark {
+  background-color: var(--primary-inactive);
+}
+.container input:disabled:checked ~ .checkmark {
+  background-color: var(--primary-inactive);
 }
 
 .container .checkmark:after {
