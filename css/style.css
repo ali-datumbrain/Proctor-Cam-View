@@ -799,4 +799,69 @@ body {
 }
 .test-taker.quintuple:hover .action-btn, .test-taker.sextuple:hover .action-btn {
   width: 10px;
+}
+
+:root {
+  --primary-inactive: rgba(235, 135, 15, 0.45);
+}
+
+.search-bar {
+  border: 1px solid var(--border-gray);
+  border-radius: var(--radius-md);
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-input {
+  border: none;
+  padding: 12px 1rem;
+  border-radius: var(--radius-md);
+  width: 100%;
+}
+.search-input:focus {
+  outline: none;
+}
+
+.proctor-cam {
+  margin-bottom: 1rem;
+}
+.proctor-cam video {
+  background-color: #656565;
+  border-radius: var(--radius-sm);
+  max-width: 100%;
+}
+
+.search-btn {
+  background-color: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-left: 1px solid var(--border-gray);
+}
+
+.test-taker-name {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 0.15rem;
+  align-items: center;
+  cursor: pointer;
+}
+.test-taker-name .test-taker-icon {
+  background-color: var(--light-gray);
+  padding: 5px;
+  border-radius: var(--radius-sm);
+}
+.test-taker-name .test-taker-icon.active {
+  background-color: var(--primary-color);
+}
+.test-taker-name .test-taker-icon.inactive {
+  background-color: var(--primary-inactive);
+}
+.test-taker-name img {
+  width: 12px;
+}
+.test-taker-name span {
+  color: var(--text-light-0);
+  font-size: 14px;
+  font-weight: 700;
 }/*# sourceMappingURL=style.css.map */
