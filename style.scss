@@ -815,6 +815,8 @@ body {
 :root {
   --primary-inactive: rgba(235, 135, 15, 0.45);
   --transparent-gray: rgba(112, 112, 112, 0.5);
+  --success-color: #42be65;
+  --fail-color: #ef5753;
 }
 
 // scrollbar mixin
@@ -847,6 +849,16 @@ body {
 }
 .proctor-cam {
   position: relative;
+  .cam-status {
+    content: '';
+    background-color: var(--success-color);
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: var(--radius-rounded);
+  }
   .cam-btns {
     position: absolute;
     bottom: 0;
