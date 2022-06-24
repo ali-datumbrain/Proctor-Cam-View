@@ -1033,4 +1033,62 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+:root {
+  --text-color-3: #333333;
+}
+
+.create-join-container {
+  border-radius: var(--radius-md);
+  display: flex;
+  position: relative;
+  background: linear-gradient(110deg, rgba(255, 255, 255, 0.2705882353) 50%, #585858 50%);
+}
+.create-join-container > div {
+  flex-basis: 50%;
+  padding: 75px 64px;
+}
+.create-join-container .session-header {
+  font-size: 36px;
+  line-height: 43px;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+.create-join-container .seperation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 1rem;
+  font-size: 24px;
+  line-height: 20px;
+  border-radius: 125px;
+}
+.create-join-container .create-session {
+  color: var(--text-color-3);
+}
+.create-join-container .join-session {
+  color: #fff;
+  padding-left: 10rem;
+}
+.create-join-container .join-session .test-list {
+  display: grid;
+  gap: 16px 12px;
+  grid-template-columns: -webkit-min-content -webkit-min-content -webkit-min-content;
+  grid-template-columns: min-content min-content min-content;
+}
+.create-join-container .join-session .room-name {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  padding: 14px 8px;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  white-space: nowrap;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
