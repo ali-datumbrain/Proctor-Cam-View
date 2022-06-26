@@ -1059,3 +1059,52 @@ body {
   background: rgba(132, 132, 132, 0.29);
   @include absolute-center();
 }
+
+.display-stats {
+  position: absolute;
+  background-color: #ffffff;
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+  gap: 3px;
+  text-align: center;
+  width: 100%;
+  transition: all 0.3s;
+  transform: translateY(0%);
+
+  &.open {
+    transform: translateY(-100%);
+    .floating-btn img {
+      transform: rotate(180deg);
+    }
+  }
+  &.close {
+    transform: translateY(-4%);
+  }
+}
+.screen-block {
+  overflow: hidden;
+  border-radius: 0px;
+  margin-bottom: 0;
+}
+.floating-border {
+  background-color: #ffffff;
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: var(--radius-rounded);
+  transform: translateY(-50%);
+}
+.floating-btn {
+  font-size: 12px;
+  padding: 0.25rem 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  border-radius: var(--radius-rounded);
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+}
+.stats-table-data {
+  margin-inline: 24px;
+  margin-bottom: 26px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
