@@ -8,185 +8,129 @@
   </head>
 
   <body>
-    <div class="cams-view">
-      <div class="screen-block">
-        <div class="cam-screen-container">
-          <div class="test-taker double">
-            <div>
-              <div class="reconnection-block">
-                <div class="reconnecting-state">Reconnecting...</div>
+    <div class="ops-background">
+      <div class="ops-view">
+        <div class="nats-main-container">
+          <div class="content-block">
+            <div class="heading-block">
+              <div class="sub-heading">
+                <img src="/img/nats-logo.svg" alt="logo" /> NATS Logs
               </div>
-              <div class="screen-name">Test-Taker-1</div>
-              <div class="screen-actions">
-
-                <img
-                  src="./img/screenshare.svg"
-                  alt="screen-share"
-                  class="action-btn success"
-                />
-                <img
-                  src="./img/webcam.svg"
-                  alt="screen-share"
-                  class="action-btn success"
-                />
-                <img
-                  src="./img/mic.svg"
-                  alt="screen-share"
-                  class="action-btn success"
-                />
-                <img
-                  src="./img/user-icon.svg"
-                  alt="user-icon"
-                  class="action-btn waiting"
-                />
-                
+              <div class="heading-button">
+                <button class="dropdown" onclick="dropdownOpen()">
+                  Examity R#100
+                </button>
+                <div id="dropdown-items" class="dropdown-menu hide">
+                  <a href="#">Examity R#1</a>
+                  <a href="#">Examity R#2</a>
+                  <a href="#">Examity R#3</a>
+                  <a href="#">Examity R#4</a>
+                  <a href="#">Examity R#5</a>
+                </div>
               </div>
-
-              <video class="screen"></video>
-              <video class="cam"></video>
             </div>
-            <div>
-              <div class="screen-name">Test-Taker-2</div>
-              <div class="screen-actions">
-                <img
-                  src="./img/screenshare.svg"
-                  alt="screen-share"
-                  class="action-btn success"
-                />
-                <img
-                  src="./img/webcam.svg"
-                  alt="screen-share"
-                  class="action-btn success"
-                />
-                <img
-                  src="./img/mic.svg"
-                  alt="screen-share"
-                  class="action-btn success"
-                />
-                <img
-                  src="./img/user-icon.svg"
-                  alt="user-icon"
-                  class="action-btn waiting"
-                />
+            <div class="nats-search-bar">
+              <input
+                type="text"
+                name="search"
+                id="nats-search"
+                placeholder="Search"
+                class="nats-search"
+              />
+              <span class="search-icon"></span>
+            </div>
+            <div class="nats-container" onclick="selectRecord()">
+              <div class="nats-record">
+                <div class="nats-info">
+                  <div class="nats-type">event</div>
+                  <div class="nats-name">Room created</div>
+                </div>
+                <div class="nats--time">13 : 01</div>
               </div>
-
-              <video class="screen"></video>
-              <video class="cam"></video>
+              <div class="nats-record">
+                <div class="nats-info">
+                  <div class="nats-type">event</div>
+                  <div class="nats-name">Participant joined (test-taker)</div>
+                </div>
+                <div class="nats--time">13 : 05</div>
+              </div>
+              <div class="nats-record">
+                <div class="nats-info">
+                  <div class="nats-type">event</div>
+                  <div class="nats-name">Stream - webcam</div>
+                </div>
+                <div class="nats--time">13 : 06</div>
+              </div>
+              <div class="nats-record">
+                <div class="nats-info">
+                  <div class="nats-type">event</div>
+                  <div class="nats-name">Participant joined (proctor)</div>
+                </div>
+                <div class="nats--time">13 : 15</div>
+              </div>
+              <div class="nats-record">
+                <div class="nats-info">
+                  <div class="nats-type">event</div>
+                  <div class="nats-name">Exam started</div>
+                </div>
+                <div class="nats--time">13 : 20</div>
+              </div>
+              <div class="nats-record selected">
+                <div class="nats-info">
+                  <div class="nats-type">event</div>
+                  <div class="nats-name">Essaytype Questions</div>
+                </div>
+                <div class="nats--time">13 : 30</div>
+              </div>
+              <div class="nats-record">
+                <div class="nats-info">
+                  <div class="nats-type">event</div>
+                  <div class="nats-name">Essaytype Questions</div>
+                </div>
+                <div class="nats--time">13 : 30</div>
+              </div>
+              <div class="nats-record">
+                <div class="nats-info">
+                  <div class="nats-type">event</div>
+                  <div class="nats-name">Essaytype Questions</div>
+                </div>
+                <div class="nats--time">13 : 30</div>
+              </div>
+              <div class="nats-record">
+                <div class="nats-info">
+                  <div class="nats-type">event</div>
+                  <div class="nats-name">Essaytype Questions</div>
+                </div>
+                <div class="nats--time">13 : 30</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="room-preview content-block">
-        <div class="sub-heading">
-          <img src="/img/proctor-card.svg" alt="" /> Proctor N.
-        </div>
-        <div class="proctor-cam">
-          <span class="cam-status"></span>
-          <div class="cam-btns">
-        
-            <img
-              src="./img/cam-bg-1.svg"
-              alt=""
-              class="cam-background active"
-            />
-            <img
-              src="./img/cam-bg-2.svg"
-              alt=""
-              class="cam-background inactive"
-            />
-          </div>
-          <video></video>
-        </div>
-        <div class="sub-heading">
-          <img src="/img/sessions.svg" alt="" /> Test Sessions
-        </div>
-        <div class="search-bar">
-          <input class="search-input" type="text" placeholder="Search" />
-          <button class="search-btn">
-            <img src="./img/search.svg" alt="search" />
-          </button>
-        </div>
-        <div class="test-taker-list">
-          <div class="test-taker-name">
-            <img
-              src="./img/user-icon.svg"
-              alt="user-icon"
-              class="test-taker-icon active"
-            />
-            <span>Test-Taker-1</span>
-          </div>
-          <div class="test-taker-name">
-            <img
-              src="./img/user-icon.svg"
-              alt="user-icon"
-              class="test-taker-icon active"
-            />
-            <span>Test-Taker-1</span>
-          </div>
-          <div class="test-taker-name">
-            <img
-              src="./img/user-icon.svg"
-              alt="user-icon"
-              class="test-taker-icon inactive"
-            />
-            <span>Test-Taker-1</span>
-          </div>
-          <div class="test-taker-name">
-            <img
-              src="./img/user-icon.svg"
-              alt="user-icon"
-              class="test-taker-icon inactive"
-            />
-            <span>Test-Taker-1</span>
-          </div>
-          <div class="test-taker-name">
-            <img
-              src="./img/user-icon.svg"
-              alt="user-icon"
-              class="test-taker-icon inactive"
-            />
-            <span>Test-Taker-1</span>
-          </div>
-          <div class="test-taker-name">
-            <img
-              src="./img/user-icon.svg"
-              alt="user-icon"
-              class="test-taker-icon inactive"
-            />
-            <span>Test-Taker-1</span>
-          </div>
-          <div class="test-taker-name">
-            <img
-              src="./img/user-icon.svg"
-              alt="user-icon"
-              class="test-taker-icon inactive"
-            />
-            <span>Test-Taker-1</span>
-          </div>
-          <div class="test-taker-name">
-            <img
-              src="./img/user-icon.svg"
-              alt="user-icon"
-              class="test-taker-icon inactive"
-            />
-            <span>Test-Taker-1</span>
-          </div>
-          <div class="test-taker-name">
-            <img
-              src="./img/user-icon.svg"
-              alt="user-icon"
-              class="test-taker-icon inactive"
-            />
-            <span>Test-Taker-1</span>
-          </div>
-     
-        <div class="sidebar-checkbox-container">
-          <div class="sidebar-checkbox">
-            <label class="container"
-              >Auto-add to grid
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
+        <div class="events-gap">
+          <div class="events-container">
+            <div class="heading-block">
+              <div class="sub-heading lg">Event details</div>
+            </div>
+            <div class="event-detail-block">
+              <div class="event-detail">
+                <div class="detail-heading">Event</div>
+                <div class="detail-value">Room Created</div>
+              </div>
+              <div class="event-detail">
+                <div class="detail-heading">SID</div>
+                <div class="detail-value">123</div>
+              </div>
+              <div class="event-detail">
+                <div class="detail-heading">Room name</div>
+                <div class="detail-value">test-taker#1</div>
+              </div>
+              <div class="event-detail">
+                <div class="detail-heading">Event</div>
+                <div class="detail-value">Room Created</div>
+              </div>
+            </div>
+            <div class="json-header">More information (JSON)</div>
+            <CodeMirror class="codemirror-container"> &nbsp;</CodeMirror>
           </div>
         </div>
       </div>
